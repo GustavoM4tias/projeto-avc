@@ -39,12 +39,7 @@ ENV/
 # Sistema
 .DS_Store
 Thumbs.db
-
-# Dados grandes (manter apenas link/instrução no README)
-# Comente a linha abaixo se quiser versionar o CSV
-data/*.csv
-!data/.gitkeep
-
+ 
 # Artefatos de treino
 *.pkl
 *.joblib

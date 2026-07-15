@@ -26,6 +26,9 @@ venv/
 env/
 ENV/
 
+# Testes
+.pytest_cache/
+
 # Jupyter
 .ipynb_checkpoints/
 *.ipynb_checkpoints
@@ -49,3 +52,10 @@ mlruns/
 
 # Logs
 *.log
+
+# Segredos
+.env
+
+# Saidas dos experimentos (regeneraveis)
+results/
+

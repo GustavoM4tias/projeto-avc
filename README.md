@@ -1,8 +1,12 @@
-# Tech Challenge - Fase 1: Predição de AVC com Machine Learning
+# Tech Challenge - Predição de AVC com Machine Learning
 
-Projeto de pós-graduação em IA para Devs. 
-Implementa um pipeline de classificação para apoiar a triagem de pacientes com risco de Acidente
-Vascular Cerebral (AVC) a partir de dados clínicos tabulares.
+Projeto de pós-graduação em IA para Devs.
+
+- **Fase 1:** pipeline de classificação para apoiar a triagem de pacientes com risco de
+  Acidente Vascular Cerebral (AVC) a partir de dados clínicos tabulares.
+- **Fase 2 (Projeto 1):** otimização dos hiperparâmetros dos modelos da Fase 1 com
+  **Algoritmos Genéticos** e integração com **LLM (Google Gemini)** para gerar
+  explicações em linguagem natural dos diagnósticos para a equipe médica.
 
 ## Dataset
 
@@ -17,12 +21,19 @@ São 5.110 registros e 12 atributos, sendo `stroke` a variável alvo
 ```
 projeto-avc/
 ├── data/
-│   └── healthcare-dataset-stroke-data.csv  
+│   └── healthcare-dataset-stroke-data.csv
 ├── notebooks/
-│   └── tech_challenge_avc.ipynb             (notebook principal)
+│   ├── tech_challenge_avc.ipynb             (Fase 1 - notebook principal)
+│   └── tech_challenge_fase2.ipynb           (Fase 2 - notebook principal)
+├── genetico.py                              (Fase 2 - algoritmo genético)
+├── test_genetico.py                         (Fase 2 - testes, rodar com pytest)
+├── docs/
+│   └── arquitetura.md                       (Fase 2 - arquitetura da solução)
+├── results/                                 (gerado ao rodar: logs e históricos)
 ├── reports/
-│   └── relatorio_tecnico.docx               (relatório final)
+│   └── relatorio_tecnico.docx               (relatório da Fase 1)
 ├── requirements.txt
+├── .env.example                             (modelo para a chave do Gemini)
 ├── Dockerfile
 ├── .dockerignore
 ├── .gitignore
@@ -72,10 +83,44 @@ projeto-avc/
 4. Abrir `http://localhost:8888` no navegador. O notebook está em
    `tech_challenge_avc.ipynb`.
 
-## Entregáveis 
+---
 
-- Notebook com EDA, pré-processamento, modelagem e avaliação.
-- Relatório (`reports/relatorio_tecnico.docx`).
-- Dockerfile e README para reprodução.
-- Vídeo de demonstração.
+# Fase 2 - Otimização com Algoritmo Genético + LLM
+
+Um algoritmo genético (implementado do zero em [`genetico.py`](genetico.py))
+procura hiperparâmetros melhores para os 3 modelos da Fase 1, usando F2-score em
+validação cruzada como fitness. Dou peso maior ao recall porque na triagem o
+erro mais grave é o falso negativo. São 3 experimentos com configurações
+diferentes de população e mutação. Depois, o Gemini transforma a saída do modelo
+(probabilidade + fatores SHAP) em uma explicação em linguagem natural para a
+equipe médica, e avalia a qualidade do texto gerado.
+
+Tudo está no notebook `notebooks/tech_challenge_fase2.ipynb`. Mais detalhes em
+[`docs/arquitetura.md`](docs/arquitetura.md).
+
+## Como executar a Fase 2
+
+1. Mesmo setup da Fase 1 (venv + `pip install -r requirements.txt` + CSV em `data/`);
+
+2. Criar a chave do Gemini (gratuita em https://aistudio.google.com/apikey) e
+   salvar no `.env`: `copy .env.example .env` e colar a chave;
+
+3. Abrir e rodar o notebook (a célula dos experimentos demora uns 10 minutos):
+
+   ```bash
+   jupyter notebook notebooks/tech_challenge_fase2.ipynb
+   ```
+
+4. Testes do algoritmo genético:
+
+   ```bash
+   python -m pytest
+   ```
+
+## Entregáveis
+
+- **Fase 1:** notebook com EDA, pré-processamento, modelagem e avaliação;
+  relatório (`reports/relatorio_tecnico.docx`); Dockerfile; vídeo.
+- **Fase 2:** notebook com a otimização e a integração com LLM, `genetico.py`,
+  testes, documentação (`docs/arquitetura.md`) e vídeo.
 

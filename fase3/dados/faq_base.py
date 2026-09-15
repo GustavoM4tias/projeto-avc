@@ -1,0 +1,797 @@
+# Perguntas frequentes feitas por médicos ao assistente, com a resposta esperada.
+# Cada item tem várias formas de perguntar a mesma coisa (paráfrases) - isso vira
+# vários exemplos de treino, ajudando o modelo a não decorar uma frase só.
+# As respostas seguem o padrão que quero ensinar: objetiva, cita o protocolo e,
+# quando envolve conduta, lembra que a decisão é do médico responsável.
+
+AVISO = 'A decisão final é do médico responsável.'
+
+FAQ = [
+    # AVC
+    {
+        'protocolo': 'PROT-AVC-001',
+        'perguntas': [
+            'Qual é a janela para trombólise no AVC isquêmico?',
+            'Até quantas horas posso fazer alteplase no AVC?',
+            'Tempo máximo para trombólise endovenosa no AVC isquêmico?',
+        ],
+        'resposta': 'Segundo o PROT-AVC-001, a janela para trombólise endovenosa com alteplase '
+                    'é de até 4 horas e 30 minutos do início dos sintomas (ou do último momento em '
+                    'que o paciente foi visto bem), desde que a TC exclua hemorragia e não haja '
+                    'contraindicação no checklist. ' + AVISO,
+    },
+    {
+        'protocolo': 'PROT-AVC-001',
+        'perguntas': [
+            'Quando acionar o Código AVC?',
+            'Quais os critérios para abrir o Código AVC na triagem?',
+            'Quem aciona o Código AVC e em que situação?',
+        ],
+        'resposta': 'Pelo PROT-AVC-001, o Código AVC é acionado pela enfermagem da triagem '
+                    '(classificação vermelha) sempre que houver sinal FAST positivo (assimetria '
+                    'facial, fraqueza em um braço ou alteração da fala) com início dos sintomas há '
+                    'menos de 24 horas. O acionamento comunica o neurologista de plantão (ramal '
+                    '2200), dá prioridade à TC (meta de 25 minutos) e abre o checklist no prontuário.',
+    },
+    {
+        'protocolo': 'PROT-AVC-001',
+        'perguntas': [
+            'O que significa a sigla FAST no AVC?',
+            'Quais são os sinais FAST?',
+            'Como reconhecer um AVC pela escala FAST?',
+        ],
+        'resposta': 'FAST, conforme o PROT-AVC-001: Face (assimetria facial ao sorrir), Arm '
+                    '(fraqueza ou queda de um braço ao elevar), Speech (fala arrastada ou ausente) '
+                    'e Time (registrar imediatamente o horário do início dos sintomas). Qualquer '
+                    'sinal súbito desses deve levantar suspeita de AVC.',
+    },
+    {
+        'protocolo': 'PROT-AVC-001',
+        'perguntas': [
+            'Quais são as contraindicações para trombólise no AVC?',
+            'Quando não posso fazer alteplase?',
+            'Liste as principais contraindicações da trombólise endovenosa.',
+        ],
+        'resposta': 'O PROT-AVC-001 lista como principais contraindicações: hemorragia na TC; AVC '
+                    'ou TCE grave nos últimos 3 meses; cirurgia de grande porte nos últimos 14 dias; '
+                    'sangramento ativo; plaquetas < 100.000/mm3; INR > 1,7; anticoagulante oral '
+                    'direto nas últimas 48 h; PA > 185/110 mmHg não controlada; e glicemia < 50 '
+                    'mg/dL. O checklist completo deve ser conferido e assinado pelo médico antes da '
+                    'indicação. ' + AVISO,
+    },
+    {
+        'protocolo': 'PROT-AVC-001',
+        'perguntas': [
+            'Qual a dose de alteplase prevista no protocolo?',
+            'Como o protocolo do hospital orienta a infusão de alteplase?',
+        ],
+        'resposta': 'O PROT-AVC-001 registra a dose institucional de alteplase como 0,9 mg/kg '
+                    '(máximo de 90 mg), com 10% em bolus em 1 minuto e o restante em infusão de 60 '
+                    'minutos. Isso é a referência do protocolo: a indicação e a prescrição para um '
+                    'paciente específico são exclusivas do neurologista ou médico assistente, após '
+                    'o checklist de contraindicações. ' + AVISO,
+    },
+    {
+        'protocolo': 'PROT-AVC-001',
+        'perguntas': [
+            'Qual a meta de pressão arterial no paciente que vai ser trombolisado?',
+            'Como controlar a PA antes da trombólise?',
+            'Até quanto tolerar a pressão no AVC isquêmico sem trombólise?',
+        ],
+        'resposta': 'Pelo PROT-AVC-001: no candidato à trombólise, manter PA <= 185/110 mmHg antes '
+                    'e <= 180/105 mmHg nas 24 h seguintes. No paciente que não vai ser trombolisado, '
+                    'tolerar até 220/120 mmHg nas primeiras 24 h (hipertensão permissiva), salvo '
+                    'outra indicação clínica. ' + AVISO,
+    },
+    {
+        'protocolo': 'PROT-AVC-001',
+        'perguntas': [
+            'Quais as metas de tempo do hospital no Código AVC?',
+            'Qual o tempo porta-agulha esperado no HUE?',
+            'Qual a meta de tempo porta-tomografia?',
+        ],
+        'resposta': 'As metas do PROT-AVC-001 são: porta-avaliação médica 10 min; porta-TC '
+                    'realizada 25 min; porta-laudo da TC 45 min; e porta-agulha (alteplase) 60 min.',
+    },
+    {
+        'protocolo': 'PROT-AVC-001',
+        'perguntas': [
+            'Quando indicar trombectomia mecânica?',
+            'Qual a janela para trombectomia no AVC?',
+            'Paciente com oclusão de M1, até quando pode ir para trombectomia?',
+        ],
+        'resposta': 'Conforme o PROT-AVC-001, encaminhar para avaliação de trombectomia os '
+                    'pacientes com oclusão de grande vaso (carótida interna ou M1) com início dos '
+                    'sintomas em até 6 horas, ou até 24 horas quando há critérios de imagem '
+                    'favoráveis (mismatch em perfusão). A hemodinâmica do HUE fica de sobreaviso '
+                    'no ramal 2210. ' + AVISO,
+    },
+    {
+        'protocolo': 'PROT-AVC-001',
+        'perguntas': [
+            'Qual o primeiro exame de imagem no AVC?',
+            'Preciso de angio-TC em todo paciente com AVC?',
+        ],
+        'resposta': 'Pelo PROT-AVC-001, a TC de crânio sem contraste é o exame inicial obrigatório, '
+                    'para excluir hemorragia. A angio-TC de vasos cervicais e intracranianos é '
+                    'indicada quando NIHSS >= 6 ou há suspeita de oclusão de grande vaso, desde que '
+                    'não atrase a trombólise.',
+    },
+    {
+        'protocolo': 'PROT-AVC-001',
+        'perguntas': [
+            'Por que medir glicemia capilar em todo paciente com suspeita de AVC?',
+            'A glicemia é obrigatória no Código AVC?',
+        ],
+        'resposta': 'Sim. O PROT-AVC-001 (e o PROT-DM-003) exige glicemia capilar nos primeiros '
+                    '10 minutos porque a hipoglicemia mimetiza AVC, e glicemia < 50 mg/dL '
+                    'contraindica a trombólise até correção.',
+    },
+    {
+        'protocolo': 'PROT-AVC-001',
+        'perguntas': [
+            'Onde interna o paciente com AVC confirmado?',
+            'Quais cuidados iniciais na Unidade de AVC?',
+        ],
+        'resposta': 'O PROT-AVC-001 determina internação na Unidade de AVC (leitos 31 a 40), com '
+                    'cabeceira a 30 graus, jejum até a avaliação de disfagia, controle glicêmico '
+                    'com alvo de 140-180 mg/dL e profilaxia de TEV conforme o PROT-ANT-006.',
+    },
+    # HAS
+    {
+        'protocolo': 'PROT-HAS-002',
+        'perguntas': [
+            'Qual a diferença entre urgência e emergência hipertensiva?',
+            'Como diferenciar urgência de emergência hipertensiva?',
+        ],
+        'resposta': 'Pelo PROT-HAS-002: urgência hipertensiva é PA >= 180/120 mmHg sem lesão aguda '
+                    'de órgão-alvo, tratada com anti-hipertensivo oral e redução gradual em 24-48 h. '
+                    'Emergência hipertensiva é PA muito elevada com lesão aguda de órgão-alvo '
+                    '(encefalopatia, AVC, SCA, edema agudo de pulmão, dissecção de aorta, eclâmpsia, '
+                    'insuficiência renal aguda), exigindo leito monitorizado e fármaco endovenoso. '
+                    + AVISO,
+    },
+    {
+        'protocolo': 'PROT-HAS-002',
+        'perguntas': [
+            'Quanto reduzir a pressão na emergência hipertensiva na primeira hora?',
+            'Qual a meta de redução da PA na emergência hipertensiva?',
+        ],
+        'resposta': 'O PROT-HAS-002 orienta reduzir a PA média em no máximo 25% na primeira hora; '
+                    'atingir cerca de 160/100 mmHg em 2 a 6 horas; e normalizar em 24-48 h. As '
+                    'exceções são a dissecção de aorta (PAS < 120 mmHg em 20 minutos) e o AVC '
+                    'isquêmico, que segue a hipertensão permissiva do PROT-AVC-001. ' + AVISO,
+    },
+    {
+        'protocolo': 'PROT-HAS-002',
+        'perguntas': [
+            'Como classificar a pressão arterial em adultos?',
+            'PA de 165 por 102 é qual estágio de hipertensão?',
+            'Quais os estágios de hipertensão no protocolo?',
+        ],
+        'resposta': 'Pela tabela do PROT-HAS-002: ótima < 120/80; normal 120-129/80-84; '
+                    'pré-hipertensão 130-139/85-89; estágio 1: 140-159/90-99; estágio 2: '
+                    '160-179/100-109; estágio 3: >= 180/110 mmHg. Uma PA de 165/102 mmHg, por '
+                    'exemplo, corresponde ao estágio 2. O diagnóstico exige medidas elevadas em '
+                    'pelo menos duas consultas.',
+    },
+    {
+        'protocolo': 'PROT-HAS-002',
+        'perguntas': [
+            'Posso usar captopril sublingual na urgência hipertensiva?',
+            'O protocolo permite medicação sublingual de ação rápida na crise hipertensiva?',
+        ],
+        'resposta': 'Não. O PROT-HAS-002 orienta que a urgência hipertensiva seja tratada com '
+                    'anti-hipertensivo oral e redução gradual em 24-48 h, e diz expressamente para '
+                    'não usar medicação sublingual de ação rápida. ' + AVISO,
+    },
+    {
+        'protocolo': 'PROT-HAS-002',
+        'perguntas': [
+            'Qual anti-hipertensivo endovenoso o protocolo padroniza para dissecção de aorta?',
+            'Na dissecção de aorta, qual fármaco EV usar primeiro?',
+        ],
+        'resposta': 'Pelo PROT-HAS-002, na dissecção de aorta a opção institucional é esmolol ou '
+                    'labetalol, com betabloqueio antes de qualquer vasodilatador, e meta de PAS < '
+                    '120 mmHg em 20 minutos. A escolha, a dose e a titulação são do médico '
+                    'assistente. ' + AVISO,
+    },
+    {
+        'protocolo': 'PROT-HAS-002',
+        'perguntas': [
+            'Quais as metas de PA no tratamento ambulatorial da hipertensão?',
+            'Qual o alvo pressórico em diabético hipertenso?',
+        ],
+        'resposta': 'O PROT-HAS-002 define meta geral de PA < 140/90 mmHg; em diabéticos e '
+                    'pacientes de alto risco cardiovascular, < 130/80 mmHg se tolerado. Sempre '
+                    'associado às medidas não farmacológicas (sal < 5 g/dia, atividade física, '
+                    'controle de peso, cessação do tabagismo, moderação no álcool).',
+    },
+    {
+        'protocolo': 'PROT-HAS-002',
+        'perguntas': [
+            'Quando encaminhar ao ambulatório de hipertensão?',
+            'O que é hipertensão resistente segundo o protocolo?',
+        ],
+        'resposta': 'Pelo PROT-HAS-002, encaminhar ao ambulatório de hipertensão (quartas-feiras) '
+                    'a hipertensão resistente - PA não controlada com 3 fármacos em dose otimizada, '
+                    'incluindo diurético - e a suspeita de causa secundária.',
+    },
+    # DM
+    {
+        'protocolo': 'PROT-DM-003',
+        'perguntas': [
+            'Quais os critérios diagnósticos de diabetes?',
+            'Como diagnosticar diabetes pelo protocolo?',
+            'Que valor de HbA1c fecha diabetes?',
+        ],
+        'resposta': 'Pelo PROT-DM-003: glicemia de jejum >= 126 mg/dL em duas ocasiões; glicemia '
+                    '>= 200 mg/dL 2 h após 75 g de glicose; HbA1c >= 6,5%; ou glicemia ao acaso >= '
+                    '200 mg/dL com sintomas clássicos. Pré-diabetes: jejum 100-125 mg/dL ou HbA1c '
+                    '5,7-6,4%.',
+    },
+    {
+        'protocolo': 'PROT-DM-003',
+        'perguntas': [
+            'Como tratar hipoglicemia em paciente consciente?',
+            'O que é a regra dos 15 na hipoglicemia?',
+        ],
+        'resposta': 'O PROT-DM-003 orienta, no paciente consciente e capaz de deglutir, 15 g de '
+                    'carboidrato de absorção rápida por via oral, reavaliação da glicemia em 15 '
+                    'minutos e repetição se continuar < 70 mg/dL (regra dos 15). Depois, investigar '
+                    'e registrar a causa. ' + AVISO,
+    },
+    {
+        'protocolo': 'PROT-DM-003',
+        'perguntas': [
+            'Como tratar hipoglicemia em paciente inconsciente?',
+            'Paciente com glicemia de 40 e rebaixado, o que o protocolo prevê?',
+        ],
+        'resposta': 'Pelo PROT-DM-003, no paciente inconsciente ou incapaz de deglutir: glicose '
+                    'hipertônica endovenosa (glicose 50%, 30 mL) ou glucagon 1 mg IM se não houver '
+                    'acesso venoso, seguido de alimentação assim que possível. Glicemia < 54 mg/dL '
+                    'caracteriza hipoglicemia grave. ' + AVISO,
+    },
+    {
+        'protocolo': 'PROT-DM-003',
+        'perguntas': [
+            'Quais os critérios de cetoacidose diabética?',
+            'Como definir CAD?',
+        ],
+        'resposta': 'O PROT-DM-003 define cetoacidose diabética por glicemia > 250 mg/dL, pH '
+                    'arterial < 7,3, bicarbonato < 18 mEq/L e cetonemia ou cetonúria positiva.',
+    },
+    {
+        'protocolo': 'PROT-DM-003',
+        'perguntas': [
+            'Quais os pilares do tratamento da cetoacidose?',
+            'Posso iniciar insulina na CAD com potássio de 3,0?',
+            'Quando usar bicarbonato na cetoacidose?',
+        ],
+        'resposta': 'Pelo PROT-DM-003, os pilares são: hidratação com salina 0,9% (15-20 mL/kg na '
+                    'primeira hora); reposição de potássio antes da insulina se K < 3,3 mEq/L (não '
+                    'iniciar insulina com potássio baixo); insulina regular EV contínua (0,1 U/kg/h) '
+                    'após correção do potássio; soro glicosado 5% quando a glicemia chegar a 200-250 '
+                    'mg/dL; bicarbonato apenas se pH < 6,9. Com K de 3,0, portanto, repor potássio '
+                    'antes da insulina. ' + AVISO,
+    },
+    {
+        'protocolo': 'PROT-DM-003',
+        'perguntas': [
+            'Qual o alvo glicêmico do paciente internado?',
+            'Qual a meta de glicemia na Unidade de AVC?',
+            'Posso usar só escala móvel de insulina no internado?',
+        ],
+        'resposta': 'O PROT-DM-003 define alvo de 140-180 mg/dL em enfermaria e na Unidade de AVC '
+                    '(evitando hipoglicemia, que piora o desfecho neurológico). Antidiabéticos orais '
+                    'são suspensos em pacientes graves e o esquema é basal-bolus; escala móvel '
+                    'isolada não é aceita. Glicemia capilar antes das refeições e ao deitar, ou a '
+                    'cada 4-6 h em jejum. ' + AVISO,
+    },
+    {
+        'protocolo': 'PROT-DM-003',
+        'perguntas': [
+            'O que caracteriza o estado hiperglicêmico hiperosmolar?',
+            'Diferença entre CAD e EHH?',
+        ],
+        'resposta': 'Pelo PROT-DM-003, o EHH tem glicemia > 600 mg/dL, osmolaridade > 320 mOsm/kg '
+                    'e sem acidose importante, geralmente em idosos com diabetes tipo 2. O tratamento '
+                    'é semelhante ao da CAD, com hidratação mais cautelosa e vigilância do sódio.',
+    },
+    {
+        'protocolo': 'PROT-DM-003',
+        'perguntas': [
+            'Quem deve ser encaminhado ao ambulatório de endocrinologia na alta?',
+        ],
+        'resposta': 'Pelo PROT-DM-003, todo paciente com diabetes recém-diagnosticado, HbA1c > 9% '
+                    'ou episódio de CAD/EHH vai ao ambulatório de endocrinologia (terças-feiras), '
+                    'com plano de automonitorização e orientação sobre hipoglicemia.',
+    },
+    # SEPSE
+    {
+        'protocolo': 'PROT-SEPSE-004',
+        'perguntas': [
+            'Quais os critérios para abrir o protocolo de sepse na triagem?',
+            'Quando a enfermagem deve abrir o protocolo de sepse?',
+        ],
+        'resposta': 'Pelo PROT-SEPSE-004, abrir o protocolo quando há suspeita de infecção e pelo '
+                    'menos dois dos critérios: FR >= 22 irpm; Glasgow < 15; PAS <= 100 mmHg; '
+                    'temperatura > 38 ou < 36 graus C; FC > 90 bpm. A abertura gera alerta ao médico '
+                    'da emergência e prioridade "sepse" no laboratório.',
+    },
+    {
+        'protocolo': 'PROT-SEPSE-004',
+        'perguntas': [
+            'O que faz parte do pacote da primeira hora da sepse?',
+            'Quais as ações do bundle de 1 hora?',
+            'O que precisa ser feito em 60 minutos na sepse?',
+        ],
+        'resposta': 'O pacote da primeira hora do PROT-SEPSE-004: 1) lactato; 2) hemoculturas (2 '
+                    'pares) e culturas dos sítios suspeitos antes do antibiótico, sem atrasá-lo; 3) '
+                    'antibiótico de amplo espectro EV conforme o guia do HUE; 4) cristaloide 30 mL/kg '
+                    'se hipotensão ou lactato >= 4 mmol/L; 5) vasopressor (noradrenalina) se a '
+                    'hipotensão persistir, alvo de PAM >= 65 mmHg. Prescrição de antibiótico e '
+                    'vasopressor é ato médico. ' + AVISO,
+    },
+    {
+        'protocolo': 'PROT-SEPSE-004',
+        'perguntas': [
+            'Como o protocolo define choque séptico?',
+            'Qual a definição de sepse no protocolo?',
+        ],
+        'resposta': 'Pelo PROT-SEPSE-004, sepse é a disfunção orgânica ameaçadora à vida causada '
+                    'por resposta desregulada a uma infecção; choque séptico é sepse com hipotensão '
+                    'persistente que exige vasopressor para PAM >= 65 mmHg e lactato > 2 mmol/L '
+                    'apesar de ressuscitação volêmica adequada.',
+    },
+    {
+        'protocolo': 'PROT-SEPSE-004',
+        'perguntas': [
+            'Qual vasopressor é a primeira escolha na sepse?',
+            'Quando iniciar noradrenalina no choque séptico?',
+        ],
+        'resposta': 'O PROT-SEPSE-004 define a noradrenalina como primeira escolha, iniciada se a '
+                    'hipotensão persistir durante ou após a reposição volêmica, com alvo de PAM >= '
+                    '65 mmHg. A prescrição é do médico assistente. ' + AVISO,
+    },
+    {
+        'protocolo': 'PROT-SEPSE-004',
+        'perguntas': [
+            'O que reavaliar em 6 horas na sepse?',
+            'Quando descalonar o antibiótico na sepse?',
+        ],
+        'resposta': 'Pelo PROT-SEPSE-004, em 6 h reavaliar lactato em queda, diurese >= 0,5 '
+                    'mL/kg/h, PAM >= 65 mmHg e necessidade de UTI (ramal 3000). O antibiótico é '
+                    'revisado em 48-72 h com as culturas e descalonado para o espectro mais estreito '
+                    'possível; duração usual de 7 a 10 dias. ' + AVISO,
+    },
+    {
+        'protocolo': 'PROT-SEPSE-004',
+        'perguntas': [
+            'Qual o indicador de tempo até antibiótico na sepse no HUE?',
+        ],
+        'resposta': 'O PROT-SEPSE-004 estabelece a meta de tempo abertura do protocolo - '
+                    'antibiótico < 60 minutos em 90% dos casos, revisada mensalmente pela CCIH junto '
+                    'com a mortalidade por sepse.',
+    },
+    # DOR TORÁCICA
+    {
+        'protocolo': 'PROT-DT-005',
+        'perguntas': [
+            'Em quanto tempo o ECG deve ser feito na dor torácica?',
+            'Qual a classificação de triagem para dor torácica?',
+        ],
+        'resposta': 'Pelo PROT-DT-005, dor torácica não traumática recebe classificação laranja '
+                    '(vermelha se instável) e o ECG de 12 derivações deve ser realizado e laudado em '
+                    'até 10 minutos da chegada.',
+    },
+    {
+        'protocolo': 'PROT-DT-005',
+        'perguntas': [
+            'Qual a meta porta-balão no infarto com supra?',
+            'O que fazer diante de supradesnivelamento de ST?',
+        ],
+        'resposta': 'O PROT-DT-005 orienta ativar imediatamente a hemodinâmica (ramal 2210) no '
+                    'IAMCSST, com meta porta-balão de 90 minutos. Se a angioplastia não for possível '
+                    'em 120 minutos, considerar fibrinólise, decisão do cardiologista. ' + AVISO,
+    },
+    {
+        'protocolo': 'PROT-DT-005',
+        'perguntas': [
+            'Como estratificar a SCA sem supra?',
+            'Quais escores usar na dor torácica?',
+        ],
+        'resposta': 'Pelo PROT-DT-005, a SCASSST é estratificada com troponina seriada (chegada e '
+                    '1-3 h) e escores HEART e GRACE. Alto risco: unidade coronariana e cateterismo '
+                    'em 24-72 h.',
+    },
+    {
+        'protocolo': 'PROT-DT-005',
+        'perguntas': [
+            'Devo dar oxigênio a todo paciente com infarto?',
+            'Quando o nitrato é contraindicado na dor torácica?',
+        ],
+        'resposta': 'Pelo PROT-DT-005, oxigênio só se SpO2 < 90%. O nitrato é contraindicado com '
+                    'uso de inibidor de fosfodiesterase nas últimas 24-48 h ou hipotensão. ' + AVISO,
+    },
+    {
+        'protocolo': 'PROT-DT-005',
+        'perguntas': [
+            'Quais diagnósticos diferenciais não posso esquecer na dor torácica?',
+            'Suspeita de dissecção de aorta: o que não fazer?',
+        ],
+        'resposta': 'O PROT-DT-005 lista dissecção de aorta, TEP, pneumotórax hipertensivo, '
+                    'tamponamento, pericardite e ruptura esofágica. Na suspeita de dissecção, não '
+                    'anticoagular e solicitar angio-TC de aorta.',
+    },
+    {
+        'protocolo': 'PROT-DT-005',
+        'perguntas': [
+            'Quais os critérios de alta da emergência na dor torácica de baixo risco?',
+        ],
+        'resposta': 'Pelo PROT-DT-005: HEART <= 3, troponinas seriadas negativas e ECG sem '
+                    'alterações isquêmicas permitem alta com retorno ao ambulatório de cardiologia '
+                    'em até 7 dias. ' + AVISO,
+    },
+    # ANTITROMBÓTICOS
+    {
+        'protocolo': 'PROT-ANT-006',
+        'perguntas': [
+            'Quando iniciar AAS após o AVC isquêmico?',
+            'Depois da trombólise, quando começar antiagregante?',
+        ],
+        'resposta': 'Pelo PROT-ANT-006, iniciar AAS em 24 a 48 h após o AVC isquêmico, ou 24 h '
+                    'após a trombólise, desde que a TC de controle exclua transformação hemorrágica. '
+                    + AVISO,
+    },
+    {
+        'protocolo': 'PROT-ANT-006',
+        'perguntas': [
+            'Quando indicar dupla antiagregação após AVC?',
+            'Por quanto tempo manter AAS e clopidogrel no AVC minor?',
+        ],
+        'resposta': 'O PROT-ANT-006 prevê dupla antiagregação (AAS + clopidogrel) por 21 dias em '
+                    'AVC minor (NIHSS <= 3) ou AIT de alto risco (ABCD2 >= 4), seguida de '
+                    'monoterapia por tempo indeterminado. ' + AVISO,
+    },
+    {
+        'protocolo': 'PROT-ANT-006',
+        'perguntas': [
+            'Quando iniciar anticoagulação após AVC por fibrilação atrial?',
+            'O que é a regra 1-3-6-12?',
+            'Paciente com AVC cardioembólico e NIHSS 10, quando anticoagular?',
+        ],
+        'resposta': 'A regra 1-3-6-12 do PROT-ANT-006: AIT, 1 dia; AVC leve (NIHSS < 8), 3 dias; '
+                    'AVC moderado (NIHSS 8-15), 6 dias; AVC grave (NIHSS > 15), 12 dias. Um paciente '
+                    'com NIHSS 10, portanto, teria início previsto em 6 dias. Preferir DOAC à '
+                    'varfarina, exceto prótese mecânica ou estenose mitral moderada a grave. ' + AVISO,
+    },
+    {
+        'protocolo': 'PROT-ANT-006',
+        'perguntas': [
+            'Como investigar fibrilação atrial no paciente com AVC?',
+        ],
+        'resposta': 'Pelo PROT-ANT-006: ECG na admissão, monitorização contínua por pelo menos 24 '
+                    'h e Holter de 24 h se o mecanismo for indeterminado.',
+    },
+    {
+        'protocolo': 'PROT-ANT-006',
+        'perguntas': [
+            'Como fazer profilaxia de TEV no AVC?',
+            'Quando iniciar heparina profilática após trombólise?',
+        ],
+        'resposta': 'O PROT-ANT-006 orienta compressão pneumática intermitente desde a admissão em '
+                    'pacientes com mobilidade reduzida; heparina profilática a partir de 24 h se não '
+                    'houver hemorragia (após trombólise, aguardar 24 h e TC de controle); e '
+                    'mobilização precoce. ' + AVISO,
+    },
+    {
+        'protocolo': 'PROT-ANT-006',
+        'perguntas': [
+            'Qual o alvo de LDL após AVC isquêmico?',
+            'Estatina após AVC: qual intensidade?',
+        ],
+        'resposta': 'Pelo PROT-ANT-006, estatina de alta intensidade para todo AVC isquêmico '
+                    'aterosclerótico, iniciada na internação, com alvo de LDL < 70 mg/dL ou redução '
+                    '>= 50%. ' + AVISO,
+    },
+    {
+        'protocolo': 'PROT-ANT-006',
+        'perguntas': [
+            'Estenose carotídea sintomática de 80%: qual a conduta prevista?',
+        ],
+        'resposta': 'O PROT-ANT-006 prevê, para estenose carotídea sintomática >= 70%, avaliação '
+                    'de endarterectomia ou stent em até 14 dias do evento. ' + AVISO,
+    },
+    # DOCUMENTOS
+    {
+        'protocolo': 'PROT-LAUDO-007',
+        'perguntas': [
+            'O que todo documento clínico precisa conter?',
+            'Quais os itens obrigatórios em um laudo ou evolução?',
+        ],
+        'resposta': 'Pelo PROT-LAUDO-007: identificação do paciente (nome completo e número de '
+                    'prontuário), data e hora, identificação e assinatura do profissional (nome e '
+                    'CRM/COREN). Abreviações só as da lista padronizada do HUE.',
+    },
+    {
+        'protocolo': 'PROT-LAUDO-007',
+        'perguntas': [
+            'Qual a estrutura do laudo de TC de crânio no hospital?',
+            'Como escrever o laudo de tomografia de crânio sem contraste?',
+        ],
+        'resposta': 'O modelo do PROT-LAUDO-007 traz: identificação e data/hora; indicação clínica; '
+                    'técnica; achados (parênquima com sinais de isquemia/ASPECTS, hemorragia, '
+                    'sistema ventricular e sulcos, linha média, estruturas ósseas); conclusão '
+                    'objetiva; e radiologista com CRM.',
+    },
+    {
+        'protocolo': 'PROT-LAUDO-007',
+        'perguntas': [
+            'Como é a evolução médica no formato SOAP?',
+            'O que vai em cada parte do SOAP?',
+        ],
+        'resposta': 'Pelo PROT-LAUDO-007: S (subjetivo) - queixas e relato da equipe; O (objetivo) '
+                    '- sinais vitais, exame físico e exames do dia; A (avaliação) - diagnósticos '
+                    'ativos e evolução; P (plano) - condutas, exames pendentes e previsão de alta; '
+                    'seguido do nome e CRM do médico.',
+    },
+    {
+        'protocolo': 'PROT-LAUDO-007',
+        'perguntas': [
+            'O assistente pode emitir uma receita?',
+            'Você consegue gerar a receita pronta para eu imprimir?',
+        ],
+        'resposta': 'Não. Pelo PROT-LAUDO-007 e pelo PROT-ALERTA-010, sistemas de apoio não emitem '
+                    'receitas: uma receita só tem validade com assinatura do médico. Posso listar as '
+                    'opções previstas em protocolo ou montar um rascunho marcado como "RASCUNHO - '
+                    'requer validação médica" para o médico revisar e assinar.',
+    },
+    {
+        'protocolo': 'PROT-LAUDO-007',
+        'perguntas': [
+            'O que deve constar no relatório de alta?',
+        ],
+        'resposta': 'Pelo PROT-LAUDO-007 (item 6): resumo da internação, diagnósticos finais com '
+                    'CID, procedimentos realizados, medicações em uso na alta, pendências (exames e '
+                    'retornos), orientações ao paciente e à família e sinais de alerta para retorno '
+                    'imediato.',
+    },
+    {
+        'protocolo': 'PROT-LAUDO-007',
+        'perguntas': [
+            'Como preencher uma solicitação de procedimento?',
+            'O que precisa ter no pedido de trombectomia?',
+        ],
+        'resposta': 'O modelo do PROT-LAUDO-007 pede: identificação do paciente, procedimento, '
+                    'justificativa clínica com o critério do protocolo que embasa (ex.: PROT-AVC-001, '
+                    'item 8, para trombectomia), grau de urgência, protocolo de referência, médico '
+                    'solicitante com CRM e data/hora.',
+    },
+    # ALTA
+    {
+        'protocolo': 'PROT-ALTA-008',
+        'perguntas': [
+            'Quais os critérios de alta da Unidade de AVC?',
+            'O que precisa estar pronto para dar alta ao paciente com AVC?',
+        ],
+        'resposta': 'Pelo PROT-ALTA-008: quadro neurológico estável há 24 h; mecanismo definido ou '
+                    'investigação concluída; avaliação de disfagia com via de alimentação definida; '
+                    'prevenção secundária prescrita (PROT-ANT-006); PA e glicemia controladas; e '
+                    'plano de reabilitação e destino da alta acordados com a família. Tudo '
+                    'registrado no checklist de alta. ' + AVISO,
+    },
+    {
+        'protocolo': 'PROT-ALTA-008',
+        'perguntas': [
+            'O que é a escala de Rankin modificada?',
+            'Quando registrar a mRS?',
+            'mRS 4 significa o quê?',
+        ],
+        'resposta': 'A mRS, pelo PROT-ALTA-008, vai de 0 (sem sintomas) a 6 (óbito): 1 sintomas '
+                    'sem incapacidade; 2 incapacidade leve, independente; 3 moderada, anda sem '
+                    'ajuda; 4 moderadamente grave, não anda sem ajuda; 5 grave, acamado. Deve ser '
+                    'registrada na alta e em 90 dias, por contato telefônico do ambulatório.',
+    },
+    {
+        'protocolo': 'PROT-ALTA-008',
+        'perguntas': [
+            'Quando é o primeiro retorno do paciente com AVC após a alta?',
+            'Quais os retornos previstos após o AVC?',
+        ],
+        'resposta': 'Pelo PROT-ALTA-008: ambulatório de AVC em 30 dias, depois 90 dias e 1 ano; '
+                    'reabilitação iniciada em até 7 dias após a alta; ambulatório de prevenção '
+                    'secundária conforme necessidade; serviço social para mRS >= 3 ou vulnerabilidade '
+                    'social.',
+    },
+    {
+        'protocolo': 'PROT-ALTA-008',
+        'perguntas': [
+            'Quais orientações dar à família na alta do AVC?',
+        ],
+        'resposta': 'O PROT-ALTA-008 exige orientar: reconhecimento dos sinais FAST e acionamento '
+                    'do 192; uso correto das medicações e risco de interromper antiagregante ou '
+                    'anticoagulante; controle de pressão, glicemia e colesterol e cessação do '
+                    'tabagismo; e sinais de alerta para retorno imediato (novo déficit, cefaleia '
+                    'intensa, sangramento, queda).',
+    },
+    # EXAMES
+    {
+        'protocolo': 'PROT-EXAMES-009',
+        'perguntas': [
+            'Quais exames são obrigatórios na chegada do Código AVC?',
+            'Que exames pedir na suspeita de AVC?',
+        ],
+        'resposta': 'Pelo PROT-EXAMES-009: glicemia capilar (5 min), ECG (10 min), TC de crânio sem '
+                    'contraste (25 min, laudo em 45), hemograma, coagulograma, glicemia sérica, '
+                    'eletrólitos e creatinina (45 min) e troponina (60 min).',
+    },
+    {
+        'protocolo': 'PROT-EXAMES-009',
+        'perguntas': [
+            'A trombólise precisa esperar o coagulograma?',
+            'Quais exames são obrigatórios antes de decidir a trombólise?',
+        ],
+        'resposta': 'Pelo PROT-EXAMES-009, a trombólise não deve aguardar hemograma e coagulograma '
+                    'se não houver suspeita de coagulopatia ou uso de anticoagulante; glicemia e TC '
+                    'são os únicos exames obrigatórios antes da decisão. ' + AVISO,
+    },
+    {
+        'protocolo': 'PROT-EXAMES-009',
+        'perguntas': [
+            'Quais exames fazer nas primeiras 24 horas do AVC?',
+        ],
+        'resposta': 'O PROT-EXAMES-009 lista: angio-TC ou angio-RM de vasos cervicais e '
+                    'intracranianos, ecocardiograma transtorácico, monitorização cardíaca por 24 h, '
+                    'perfil lipídico, HbA1c, TSH, sorologias de rotina e avaliação de disfagia antes '
+                    'da primeira dieta oral.',
+    },
+    {
+        'protocolo': 'PROT-EXAMES-009',
+        'perguntas': [
+            'O que é um exame pendente no sistema?',
+            'Quando um exame pendente gera alerta?',
+        ],
+        'resposta': 'Pelo PROT-EXAMES-009, exame pendente é o solicitado sem resultado liberado. '
+                    'Pendente acima do prazo máximo gera alerta amarelo; exames críticos do Código '
+                    'AVC (glicemia, TC, coagulograma) fora do prazo geram alerta vermelho e '
+                    'notificação ao médico responsável.',
+    },
+    {
+        'protocolo': 'PROT-EXAMES-009',
+        'perguntas': [
+            'Quais valores críticos de exame exigem comunicação imediata?',
+            'Potássio de 6,5 é valor crítico?',
+        ],
+        'resposta': 'Pelo PROT-EXAMES-009: glicemia < 50 ou > 400 mg/dL; plaquetas < 50.000/mm3; '
+                    'INR > 4,0; potássio < 2,5 ou > 6,0 mEq/L; sódio < 120 ou > 160 mEq/L; troponina '
+                    'acima do percentil 99 com curva ascendente. Um potássio de 6,5 é crítico e '
+                    'exige comunicação imediata ao médico.',
+    },
+    {
+        'protocolo': 'PROT-EXAMES-009',
+        'perguntas': [
+            'Posso dar alta com exame pendente?',
+        ],
+        'resposta': 'Pelo PROT-EXAMES-009 e pelo PROT-ALTA-008, nenhum paciente deve sair com exame '
+                    'crítico pendente sem que o responsável pela checagem do resultado esteja '
+                    'nomeado no relatório de alta. ' + AVISO,
+    },
+    # ALERTAS / LIMITES
+    {
+        'protocolo': 'PROT-ALERTA-010',
+        'perguntas': [
+            'Quais os níveis de alerta à equipe médica?',
+            'O que gera alerta vermelho no hospital?',
+        ],
+        'resposta': 'Pelo PROT-ALERTA-010: vermelho para risco imediato à vida (Código AVC, sepse '
+                    'com hipotensão, IAMCSST, valor crítico de exame), com notificação imediata; '
+                    'amarelo para exame pendente fora do prazo, risco de AVC estimado >= 50% ou PA '
+                    '>= 180/120 sem sintomas, com notificação em até 60 min; verde para informativos '
+                    '(risco entre 20% e 50%, retorno pendente), só registro.',
+    },
+    {
+        'protocolo': 'PROT-ALERTA-010',
+        'perguntas': [
+            'Como interpretar a probabilidade do modelo de triagem de AVC?',
+            'O modelo de risco de AVC deu 60%, o que fazer?',
+        ],
+        'resposta': 'Pelo PROT-ALERTA-010, o modelo (Random Forest das Fases 1 e 2) é apoio à '
+                    'triagem, não diagnóstico. Probabilidade >= 50% gera alerta amarelo e sugestão '
+                    'de avaliação neurológica; entre 20% e 50%, alerta verde com reforço no controle '
+                    'de fatores de risco; < 20%, sem alerta. A explicação SHAP acompanha o alerta. '
+                    'Com 60%, portanto, alerta amarelo. ' + AVISO,
+    },
+    {
+        'protocolo': 'PROT-ALERTA-010',
+        'perguntas': [
+            'O que o assistente virtual pode e não pode fazer?',
+            'Quais são os seus limites de atuação?',
+            'Você pode tomar decisão clínica sozinho?',
+        ],
+        'resposta': 'Pelo PROT-ALERTA-010, posso responder dúvidas sobre os protocolos citando a '
+                    'fonte, resumir o prontuário, listar exames pendentes, sugerir os próximos passos '
+                    'previstos e gerar rascunhos marcados como "requer validação médica". Não posso '
+                    'prescrever ou definir doses para um paciente, emitir laudos, receitas ou '
+                    'atestados válidos, substituir a avaliação clínica nem decidir de forma '
+                    'autônoma. ' + AVISO,
+    },
+    {
+        'protocolo': 'PROT-ALERTA-010',
+        'perguntas': [
+            'As conversas com o assistente ficam registradas?',
+            'Como funciona a auditoria do assistente?',
+        ],
+        'resposta': 'Sim. Pelo PROT-ALERTA-010, toda interação é registrada em log estruturado '
+                    '(pergunta, protocolos consultados, resposta, alertas gerados, horário e '
+                    'usuário), mantido por 5 anos para rastreabilidade e revisão pelo Núcleo de '
+                    'Qualidade.',
+    },
+]
+
+# Pedidos que o assistente deve recusar (ou redirecionar), no formato que quero
+# que ele responda. São importantes para o fine-tuning ensinar o limite.
+RECUSAS = [
+    {
+        'protocolo': 'PROT-ALERTA-010',
+        'perguntas': [
+            'Prescreva alteplase para o paciente do leito 32.',
+            'Me passa a prescrição de alteplase pronta para o leito 32.',
+            'Faz a prescrição da trombólise do paciente 32 para mim.',
+        ],
+        'resposta': 'Não posso prescrever nem definir a dose para um paciente específico - pelo '
+                    'PROT-ALERTA-010, isso é ato exclusivo do médico responsável. O que posso fazer: '
+                    'o PROT-AVC-001 registra a dose institucional de referência (0,9 mg/kg, máximo 90 '
+                    'mg, 10% em bolus e o restante em 60 min) e o checklist de contraindicações que '
+                    'precisa ser assinado antes. Se quiser, listo as contraindicações para você '
+                    'conferir no caso do leito 32.',
+    },
+    {
+        'protocolo': 'PROT-ALERTA-010',
+        'perguntas': [
+            'Qual antibiótico devo dar para esse paciente com sepse? Já decide por mim.',
+            'Escolhe o antibiótico da sepse do leito 15 e coloca na prescrição.',
+        ],
+        'resposta': 'A escolha e a prescrição do antibiótico são ato médico (PROT-SEPSE-004 e '
+                    'PROT-ALERTA-010), então não posso decidir por você. Posso ajudar com o que o '
+                    'protocolo prevê: antibiótico de amplo espectro EV em até 60 minutos da abertura '
+                    'do protocolo, após coleta de hemoculturas, conforme o guia de antimicrobianos do '
+                    'HUE para o foco suspeito. Se me disser o foco provável, indico a seção do guia.',
+    },
+    {
+        'protocolo': 'PROT-ALERTA-010',
+        'perguntas': [
+            'Emita um atestado de 5 dias para o paciente.',
+            'Gera o laudo final da TC e assina por mim.',
+        ],
+        'resposta': 'Não posso emitir atestados nem laudos válidos: pelo PROT-LAUDO-007 e pelo '
+                    'PROT-ALERTA-010, esses documentos só têm validade com identificação e assinatura '
+                    'do profissional. Posso montar um rascunho no modelo do HUE, marcado como '
+                    '"RASCUNHO - requer validação médica", para você revisar e assinar.',
+    },
+    {
+        'protocolo': 'PROT-ALERTA-010',
+        'perguntas': [
+            'Qual a dose de amoxicilina para criança de 20 kg com otite?',
+            'Como tratar enxaqueca crônica segundo o protocolo do hospital?',
+        ],
+        'resposta': 'Não encontrei esse tema nos protocolos internos do HUE, então não posso '
+                    'responder como se fosse regra do hospital (PROT-ALERTA-010). Os protocolos '
+                    'disponíveis cobrem AVC, hipertensão, diabetes, sepse, dor torácica, '
+                    'antitrombóticos, documentos clínicos, alta, exames e alertas. Para esse caso, '
+                    'consulte a diretriz oficial ou o especialista de referência.',
+    },
+    {
+        'protocolo': 'PROT-ALERTA-010',
+        'perguntas': [
+            'Pode liberar o paciente do leito 35 para casa? Está tudo bem com ele.',
+            'Dá alta para o paciente 35.',
+        ],
+        'resposta': 'A alta é decisão do médico responsável; o que posso fazer é conferir o '
+                    'checklist do PROT-ALTA-008: estabilidade neurológica há 24 h, mecanismo '
+                    'definido, avaliação de disfagia, prevenção secundária prescrita, PA e glicemia '
+                    'controladas, plano de reabilitação e destino acordado, e nenhum exame crítico '
+                    'pendente sem responsável nomeado (PROT-EXAMES-009). Se me informar o número do '
+                    'prontuário, listo os exames pendentes do paciente.',
+    },
+]

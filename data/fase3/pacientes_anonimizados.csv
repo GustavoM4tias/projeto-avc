@@ -1,0 +1,41 @@
+paciente_id,gender,hypertension,heart_disease,ever_married,work_type,Residence_type,avg_glucose_level,bmi,smoking_status,observacoes,idade
+P-18708120,Female,0,0,Yes,Govt_job,Rural,99.5,34.4,never smoked,Contato do familiar: [TELEFONE]. Admitido em [DATA].,36
+P-D5E2C994,Female,0,0,No,Govt_job,Rural,124.5,30.0,never smoked,Contato do familiar: [TELEFONE]. Admitido em [DATA].,57
+P-48D1BD30,Male,1,0,Yes,Self-employed,Rural,164.7,37.8,formerly smoked,Contato do familiar: [TELEFONE]. Admitido em [DATA].,32
+P-772F545D,Female,0,0,Yes,Self-employed,Rural,251.4,25.9,formerly smoked,Contato do familiar: [TELEFONE]. Admitido em [DATA].,51
+P-E8C0B710,Female,0,0,No,Private,Rural,119.5,27.3,Unknown,Contato do familiar: [TELEFONE]. Admitido em [DATA].,28
+P-EC65D9C9,Female,0,0,No,Self-employed,Urban,95.6,20.1,never smoked,Contato do familiar: [TELEFONE]. Admitido em [DATA].,44
+P-0753DF87,Female,0,0,Yes,Private,Urban,240.9,25.4,formerly smoked,Contato do familiar: [TELEFONE]. Admitido em [DATA].,38
+P-0E759ED0,Female,1,0,Yes,Private,Rural,71.3,25.7,Unknown,Contato do familiar: [TELEFONE]. Admitido em [DATA].,31
+P-9225F2CB,Male,0,0,No,Private,Urban,138.5,22.2,Unknown,Contato do familiar: [TELEFONE]. Admitido em [DATA].,29
+P-E733EE22,Male,1,0,No,Govt_job,Urban,227.8,33.2,never smoked,Contato do familiar: [TELEFONE]. Admitido em [DATA].,29
+P-09154A49,Female,1,0,No,Private,Rural,93.8,23.5,Unknown,Contato do familiar: [TELEFONE]. Admitido em [DATA].,42
+P-F5364A2E,Female,1,0,Yes,Govt_job,Urban,109.8,31.7,smokes,Contato do familiar: [TELEFONE]. Admitido em [DATA].,62
+P-A1F59622,Female,0,0,No,Private,Urban,141.6,25.3,formerly smoked,Contato do familiar: [TELEFONE]. Admitido em [DATA].,55
+P-62C440AD,Female,1,1,No,Private,Rural,73.0,23.0,formerly smoked,Contato do familiar: [TELEFONE]. Admitido em [DATA].,78
+P-AB0872AD,Male,1,0,Yes,Private,Rural,104.6,23.2,Unknown,Contato do familiar: [TELEFONE]. Admitido em [DATA].,74
+P-53E5CCFD,Female,1,0,Yes,Self-employed,Urban,255.0,21.1,Unknown,Contato do familiar: [TELEFONE]. Admitido em [DATA].,50
+P-E298B9B3,Female,0,1,Yes,Govt_job,Rural,71.8,29.5,formerly smoked,Contato do familiar: [TELEFONE]. Admitido em [DATA].,87
+P-5EEBE3A3,Female,0,0,Yes,Private,Rural,227.9,23.3,formerly smoked,Contato do familiar: [TELEFONE]. Admitido em [DATA].,60
+P-BC64F43C,Male,0,0,Yes,Govt_job,Rural,86.6,20.0,formerly smoked,Contato do familiar: [TELEFONE]. Admitido em [DATA].,53
+P-0C4A22F6,Female,0,0,Yes,Govt_job,Rural,243.7,30.9,smokes,Contato do familiar: [TELEFONE]. Admitido em [DATA].,81
+P-0EDABED4,Female,0,0,Yes,Govt_job,Urban,75.5,35.3,Unknown,Contato do familiar: [TELEFONE]. Admitido em [DATA].,52
+P-3F1FE922,Female,0,0,No,Govt_job,Urban,91.5,36.2,never smoked,Contato do familiar: [TELEFONE]. Admitido em [DATA].,60
+P-3803E74C,Male,1,0,No,Self-employed,Urban,160.6,31.4,never smoked,Contato do familiar: [TELEFONE]. Admitido em [DATA].,81
+P-EACBB346,Male,0,0,No,Self-employed,Rural,252.2,26.5,formerly smoked,Contato do familiar: [TELEFONE]. Admitido em [DATA].,24
+P-BCBC8814,Female,0,0,Yes,Self-employed,Urban,116.2,27.3,smokes,Contato do familiar: [TELEFONE]. Admitido em [DATA].,60
+P-CD9CDFAB,Female,0,1,Yes,Private,Rural,104.1,34.2,smokes,Contato do familiar: [TELEFONE]. Admitido em [DATA].,81
+P-D24C4A66,Female,1,0,Yes,Govt_job,Rural,146.0,27.1,smokes,Contato do familiar: [TELEFONE]. Admitido em [DATA].,88
+P-B203893A,Male,1,1,Yes,Self-employed,Urban,74.8,24.7,formerly smoked,Contato do familiar: [TELEFONE]. Admitido em [DATA].,61
+P-68835732,Female,0,0,Yes,Govt_job,Urban,111.8,21.9,smokes,Contato do familiar: [TELEFONE]. Admitido em [DATA].,59
+P-5752691D,Male,0,1,Yes,Private,Urban,177.6,23.6,never smoked,Contato do familiar: [TELEFONE]. Admitido em [DATA].,75
+P-E5E416DB,Male,1,1,Yes,Self-employed,Urban,152.4,20.4,formerly smoked,Contato do familiar: [TELEFONE]. Admitido em [DATA].,79
+P-815EA220,Male,0,0,No,Govt_job,Rural,191.0,29.9,formerly smoked,Contato do familiar: [TELEFONE]. Admitido em [DATA].,37
+P-58C2F880,Female,1,0,No,Govt_job,Urban,180.5,27.6,smokes,Contato do familiar: [TELEFONE]. Admitido em [DATA].,57
+P-FA228284,Male,0,0,No,Self-employed,Rural,91.7,21.3,formerly smoked,Contato do familiar: [TELEFONE]. Admitido em [DATA].,73
+P-4A5C2D80,Female,1,0,No,Govt_job,Urban,106.5,26.3,formerly smoked,Contato do familiar: [TELEFONE]. Admitido em [DATA].,23
+P-C5422099,Female,0,1,No,Govt_job,Urban,198.0,29.9,formerly smoked,Contato do familiar: [TELEFONE]. Admitido em [DATA].,65
+P-E96D25BA,Female,1,0,Yes,Private,Rural,101.7,35.5,formerly smoked,Contato do familiar: [TELEFONE]. Admitido em [DATA].,82
+P-5981CDCC,Female,1,1,No,Govt_job,Urban,211.2,27.2,never smoked,Contato do familiar: [TELEFONE]. Admitido em [DATA].,65
+P-D5FB75D9,Female,0,1,Yes,Private,Rural,154.0,36.3,formerly smoked,Contato do familiar: [TELEFONE]. Admitido em [DATA].,43
+P-A0DE1441,Male,1,0,No,Self-employed,Urban,106.0,23.5,smokes,Contato do familiar: [TELEFONE]. Admitido em [DATA].,80

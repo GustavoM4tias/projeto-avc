@@ -59,3 +59,12 @@ mlruns/
 # Saidas dos experimentos (regeneraveis)
 results/
 
+
+# Fase 3 - dados brutos sinteticos (regenerados por gerar_dados.py) e caches
+data/fase3/brutos/
+.pytest_cache/
+
+# Roteiro do video (uso pessoal, nao versionar)
+reports/roteiro_video*.md
+reports/gravacao/
+~$*.docx
